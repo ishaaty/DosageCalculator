@@ -1,36 +1,38 @@
 
-def kgs_check(weight):
-        if "kgs" in weight:
-            w = weight.split(" ")
-            kgs = float(w[0])
-        else:
-            w = weight.split(" ")
-            lbs = float(w[0])
-            kgs = float(f"{lbs / 2.205:.2f}")
-        return kgs
+#def kgs_check(weight):
+        #if "kgs" in weight:
+            #w = weight.split(" ")
+            #kgs = float(w[0])
+        #else:
+            #w = weight.split(" ")
+            #lbs = float(w[0])
+            #kgs = float(f"{lbs / 2.205:.2f}")
+        #return kgs
 
 
 class Patient:
     
-    def __init__(self, name, owner, species, weight):
+    def __init__(self, name, owner, species, kgs):
         self.name = name
         self.owner = owner
         self.species = species
-        self.kgs = kgs_check(weight)
+        self.kgs = kgs
         self.lbs = self.kgs * 2.205
     
-    def __str__(self):
-        return str(self.kgs) + " kgs"
+    
 
 
 class Emergency:
 
-    def __init__(self, weight):
+    def __init__(self, kgs):
 
-        self.kgs = kgs_check(weight)
+        self.kgs = kgs
 
-        self.atropineMin = 0
-        self.atropineMax = 0
+        self.atropine4Min = 0
+        self.atropine4Max = 0
+
+        self.atropine5Min = 0
+        self.atropine5Max = 0
 
         self.dexamethasoneSPMin = 0
         self.dexamethasoneSPMax = 0
