@@ -19,8 +19,6 @@ class Patient:
         self.kgs = kgs
         self.lbs = self.kgs * 2.205
     
-    
-
 
 class Emergency:
 
@@ -45,11 +43,14 @@ class Emergency:
 
         self.glycopyrrolateMin = 0
         self.glycopyrrolateMax = 0
-    
 
-    def atropine(self):
-        self.atropineMin = self.kgs * 0.02 / 0.54
-        self.atropineMax = self.kgs * 0.04 / 0.54
+    def atropine4(self):
+        self.atropine4Min = self.kgs * 0.02 / 0.4
+        self.atropine4Max = self.kgs * 0.04 / 0.4
+
+    def atropine5(self):
+        self.atropine5Min = self.kgs * 0.02 / 0.54
+        self.atropine5Max = self.kgs * 0.04 / 0.54
     
     def dexamethasoneSP(self):
         self.dexamenthasoneSPMin = self.kgs / 4
@@ -58,7 +59,6 @@ class Emergency:
     def diphenhydramine(self):
         self.diphenhydramineMax = self.kgs / 50
         self.diphenhydramineMin = self.kgs * 2.2 / 50
-        return self.diphenhydramineMax
 
     def ephedrine(self):
         self.ephedrineMin = self.kgs * 0.05 / 50
