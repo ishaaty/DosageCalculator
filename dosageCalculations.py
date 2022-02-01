@@ -71,3 +71,57 @@ class Emergency:
 
 
 
+class AdvancedLifeSupport:
+    def __init__(self,kgs):
+        self.kgs = kgs
+
+        self.atipamezoleMin = 0
+        self.atipamezoleMax = 0
+
+        self.flumazenil = 0
+
+        self.naloxone = 0
+
+        self.atropine4 = 0
+
+        self.atropine5 = 0
+
+        self.epinephrineMin = 0
+        self.epinephrineMax = 0
+
+        self.amiodarone = 0
+
+        self.lidocaineCMin = 0
+        self.lidocaineCMax = 0
+
+        self.lidocaineF = 0
+
+    def atipamezole(self):
+        self.atipamezoleMin = self.kgs * 0.05 / 5
+        self.atipamezoleMax = self.kgs * 0.1 / 5
+
+    def flumazenil(self):
+        self.flumazenilMin = self.kgs * 0.01 / 0.1
+
+    def naloxone(self):
+        self.naxolone = self.kgs * 0.04 / 0.4
+    
+    def atropine4(self):
+        self.atropine4 = self.kgs * 0.05 / 0.4
+    
+    def atropine5(self):
+        self.atropine5 = self.kgs * 0.05 / 0.54
+    
+    def epinephrine(self):
+        self.epinephrineMin = self.kgs * 0.01
+        self.epinephrineMax = self.kgs * 0.1
+    
+    def amiodarone(self):
+        self.amiodarone = self.kgs * 5 / 50
+
+    def lidocaineC(self):
+        self.lidocaineCMin = self.kgs * 2 / 20
+        self.lidocaineCMax = self.kgs * 4 / 20
+
+    def lidocaineF(self):
+        self.lidocaineF = self.kgs * 0.2 / 20
