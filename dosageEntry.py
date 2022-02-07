@@ -38,3 +38,5 @@ class PatientInfoEntry(Frame):
 
     def on_button_press(self):
         self.callback_on_selected(self.patient_ent.get(), self.owner_ent.get(), self.species.get(), self.weight_ent.get())
+
+

@@ -37,16 +37,27 @@ class Emergency:
         self.dexamenthasoneSPMin = self.kgs / 4
         self.dexamenthasoneSPMax = self.kgs
 
-        self.diphenhydramineMax = self.kgs / 50
-        self.diphenhydramineMin = self.kgs * 2.2 / 50
+        self.diphenhydramineMin = self.kgs / 50
+        self.diphenhydramineMax = self.kgs * 2.2 / 50
 
         self.ephedrineMin = self.kgs * 0.05 / 50
-        self.ephedrineMax = self.kgs * 0.1 / 50
+        self.ephedrineMax = self.kgs / 50
 
         self.glycopyrrolateMin = self.kgs * 0.005 / 0.2
         self.glycopyrrolateMax = self.kgs * 0.01 / 0.2
 
+        self.medicineList = [self.atropine4Min, self.atropine4Max, self.atropine5Min, 
+                            self.atropine5Max, self.dexamenthasoneSPMin, self.dexamenthasoneSPMax, 
+                            self.diphenhydramineMin, self.diphenhydramineMax, self.ephedrineMin, 
+                            self.ephedrineMax, self.glycopyrrolateMin, self.glycopyrrolateMax]
+    
 
+    def returnMedicineList(self):
+        return self.medicineList
+   
+j = Emergency(13.61).returnMedicineList()
+print(j)
+    
 
 
 class anesthesiaAnalgesia:

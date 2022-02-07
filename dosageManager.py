@@ -12,3 +12,5 @@ class DosageManager():
     def disaplayPatientIntroEntry(self):
         self.root.title("Patient Information")
         self.screen = PatientInfoEntry(master = self.root, callback_on_selected = self.onclose_PatientIntroEntry)
+
+
