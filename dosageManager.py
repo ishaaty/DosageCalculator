@@ -13,9 +13,6 @@ class DosageManager():
         self.root.title("Patient Information")
         self.screen = PatientInfoEntry(master = self.root, callback_on_selected = self.onclose_PatientIntroEntry)
 
-<<<<<<< HEAD
-
-=======
     def onclose_PatientIntroEntry(self, patient, owner, species, weight):
         self.patient = patient
         self.owner = owner
@@ -36,4 +33,3 @@ def main():
     calc.root.mainloop()
 
 main()
->>>>>>> f83985071c732f6c5538edf7076489c96a0a3d76
