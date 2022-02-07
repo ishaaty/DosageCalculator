@@ -22,8 +22,10 @@ class PatientInfoEntry(Frame):
         Label(self, text = "Select Species", fg = "#56b2e8", font = "Arial 10 underline").grid(row = 0, column = 3, sticky = S)
         speciesList = ["Canine", "Feline"]
         row_value = 1
+        self.species = StringVar()
+        self.species.set(None)
         for animal in speciesList:
-            Radiobutton(self, text = animal, variable = self.species, value = animal).grid(row = row_value, column = 3)
+            Radiobutton(self, text = animal, variable = self.species, value = row_value).grid(row = row_value, column = 3)
             row_value += 1
         
         Label(self, text = "Injectable Perianesthetic Medications for canine/feline")
