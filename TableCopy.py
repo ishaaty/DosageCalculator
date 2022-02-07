@@ -110,6 +110,7 @@ class Application(Frame):
         pass
 
 
+
 def main():
     root = Tk()
     root.title("Dosage Table")
