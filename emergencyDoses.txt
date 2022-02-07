@@ -1,0 +1,12 @@
+self.e.atropine4Min
+self.e.atropine4Max
+self.e.atropine5Min
+self.e.atropine5Max 
+self.e.dexamenthasoneSPMin
+self.e.dexamenthasoneSPMax
+self.e.diphenhydramineMin
+self.e.diphenhydramineMax
+self.e.ephedrineMin
+self.e.ephedrineMax
+self.e.glycopyrrolateMin
+self.e.glycopyrrolateMax

@@ -38,4 +38,10 @@ class PatientInfoEntry(Frame):
         Button(self, text = "Submit", bg = "#56b2e8", command = self.on_button_press).grid(row = 4, column = 3)
 
     def on_button_press(self):
+<<<<<<< HEAD
+        self.callback_on_selected(self.patient_ent.get(), self.owner_ent.get(), self.species.get(), self.weight_ent.get())
+
+
+=======
         self.callback_on_selected(self.patient_ent.get(), self.owner_ent.get(), self.species, self.weight_ent.get())
+>>>>>>> f83985071c732f6c5538edf7076489c96a0a3d76
