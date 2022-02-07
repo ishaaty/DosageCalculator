@@ -19,7 +19,7 @@ class Application(Frame):
 
     def create_widgets_generalInfo(self):
         # TODO
-        Label(self, text = "DOSAGE CALCULATOR: Felines & Canines", font = "Impact 24", fg = "#56b2e8").grid(row = 0, column = 0, columnspan = 4, sticky = W, padx = 20, pady =(10, 5))
+        Label(self, text = "DOSAGE CALCULATOR: Felines & Canines", font = "Impact 24", fg = "#56b2e8").grid(row = 0, column = 0, columnspan = 5, sticky = W, padx = 20, pady =(10, 5))
 
 
 
@@ -43,32 +43,40 @@ class Application(Frame):
 
     def create_widgets_emergency(self):
 
-        Label(self, text = "Emergency", bg = "#56b2e8", font = "Impact 12", fg = "white", relief = "solid", bd = 1).grid(row = 3, column = 0, columnspan = 4, sticky = W+E, padx = (20,0))
+        Label(self, text = "Emergency", bg = "#56b2e8", font = "Impact 12", fg = "white", relief = "solid", bd = 1).grid(row = 3, column = 0, columnspan = 6, sticky = W+E, padx = (20,0))
 
-        Label(self, text = "Drug", bg = "white", font = "Arial 13", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 0, sticky = W+E+N+S, padx = (20,0))
+        Label(self, text = "Drug", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 0, sticky = W+E+N+S, padx = (20,0))
 
-        Label(self, text = "Conc. mg/mL", bg = "white", font = "Arial 13", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 1, sticky = W+E+N+S, padx = (20,0))
+        Label(self, text = "Conc. mg/mL", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 1, sticky = W+E+N+S)
 
-        Label(self, text = "Range", bg = "white", font = "Arial 13", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 2, sticky = W+E+N+S, padx = (20,0))
+        Label(self, text = "Range mg/kg", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 2, sticky = W+E+N+S)
+
+        Label(self, text = "Species", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 3, sticky = W+E+N+S)
     
-        Label(self, text = "Volume (mLs)", bg = "white", relief = "solid", bd = 1).grid(row = 4, column = 3, columnspan = 2, sticky = W+E+N+S)
+        Label(self, text = "Volume (mLs)", bg = "white", font = "Arial 9 bold" relief = "solid", bd = 1).grid(row = 4, column = 4, columnspan = 2, sticky = W+E+N+S)
 
-        Label(self, text = "Minimum", bg = "white", relief = "solid", bd = 1).grid(row = 5, column = 3)
+        Label(self, text = "Minimum", bg = "white", relief = "solid", bd = 1).grid(row = 5, column = 4, sticky = W+E+N+S)
 
-        Label(self, text = "Maximum", bg = "white", relief = "solid", bd = 1).grid(row = 5, column = 4)
+        Label(self, text = "Maximum", bg = "white", relief = "solid", bd = 1).grid(row = 5, column = 5, sticky = W+E+N+S)
 
                        
         # fix this code v
         f = open("namesEmergency.txt")
         row_num = 6
         column_num = 0
+        x = 20
+
 
         for line in f:
-            l = line.split("  ")
+            l = line.split("; ")
+            x = 20
             for item in l:
-                Label(self, text = item, bg = "white", relief = "solid", bd = 1).grid(row = row_num, rowspan = 2, column = column_num, sticky = W+E+N+S, padx = (20,0))
+                Label(self, text = item, bg = "white", relief = "solid", bd = 1).grid(row = row_num, rowspan = 2, column = column_num, sticky = W+E+N+S, padx = (x, 0))
+                if x == 20:
+                    x = 0
                 column_num += 1
             row_num += 2
+            column_num = 0
         
 
 
