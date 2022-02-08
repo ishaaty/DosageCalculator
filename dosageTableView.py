@@ -13,8 +13,9 @@ class Application(Frame):
         self.grid()
         self.create_widgets_generalInfo()
         self.create_widgets_emergency()
-        self.create_widgets_ALS()
         self.create_widgets_anesthesia
+        self.create_widgets_ALS()
+        
         self.kgs = 0
         self.ownerName = 0
         self.petname = 0
@@ -81,14 +82,12 @@ class Application(Frame):
                 column_num += 1
             row_num += 2
             column_num = 0
-        
-
 
         row_num = 6
         column_num = 4
 
         i = 0
-        for num in Emergency(self.kgs).returnMedicineList():
+        for num in Emergency(13.61).returnMedicineList():
             num = f"{num:.2f}"
             l = Label(self, text = num, bg = "white", relief = "solid", bd = 1)
             if row_num % 2 == 0:
@@ -111,10 +110,34 @@ class Application(Frame):
     
 
     def create_widgets_anesthesia(self):
-        # TODO
-        pass
+
+        Label(self, text = "Anesthesia and Analegesia", bg = "white", relief = "solid", bd = 1).grid(row = 3, column = 6, columnspan = 6, sticky = W+E, padx = (5,0))
+
+        Label(self, text = "Drug", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 6, sticky = W+E+N+S, padx = (5,0))
+
+        Label(self, text = "Conc. mg/mL", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 7, sticky = W+E+N+S)
+
+        Label(self, text = "Range mg/kg", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 8, sticky = W+E+N+S)
+
+        Label(self, text = "Species", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 9, sticky = W+E+N+S)
+    
+        Label(self, text = "Volume (mLs)", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, column = 110, columnspan = 2, sticky = W+E+N+S)
+
+        Label(self, text = "Minimum", bg = "white", relief = "solid", bd = 1).grid(row = 5, column = 10, sticky = W+E+N+S)
+
+        Label(self, text = "Maximum", bg = "white", relief = "solid", bd = 1).grid(row = 5, column = 11, sticky = W+E+N+S)
 
 
+
+def main():
+    root = Tk()
+    root.title("Dosage Table")
+    root.geometry("800x990")
+    app = Application(root)
+
+    root.mainloop()
+
+main()
 
 
 
