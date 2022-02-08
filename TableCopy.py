@@ -53,7 +53,7 @@ class Application(Frame):
 
         Label(self, text = "Species", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 3, sticky = W+E+N+S)
     
-        Label(self, text = "Volume (mLs)", bg = "white", font = "Arial 9 bold" relief = "solid", bd = 1).grid(row = 4, column = 4, columnspan = 2, sticky = W+E+N+S)
+        Label(self, text = "Volume (mLs)", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, column = 4, columnspan = 2, sticky = W+E+N+S)
 
         Label(self, text = "Minimum", bg = "white", relief = "solid", bd = 1).grid(row = 5, column = 4, sticky = W+E+N+S)
 
@@ -71,7 +71,7 @@ class Application(Frame):
             l = line.split("; ")
             x = 20
             for item in l:
-                Label(self, text = item, bg = "white", relief = "solid", bd = 1).grid(row = row_num, rowspan = 2, column = column_num, sticky = W+E+N+S, padx = (x, 0))
+                Label(self, text = item, bg = "white", relief = "solid", bd = 1).grid(row = row_num, column = column_num, sticky = W+E+N+S, padx = (x, 0))
                 if x == 20:
                     x = 0
                 column_num += 1
@@ -81,22 +81,23 @@ class Application(Frame):
 
 
         row_num = 6
-        column_num = 1
+        column_num = 4
 
         i = 0
-        #for num in Emergency(13.61).returnMedicineList():
-            #num = f"{num:.2f}"
-            #l = Label(self, text = num, bg = "white", relief = "solid", bd = 1)
-            #if row_num % 2 == 0:
-                #l.grid(row = row_num, rowspan = 2, column = column_num, sticky = W+E+N+S)
-            #else:
-                #l.grid(row = row_num - 1, rowspan = 2, column = column_num, sticky = W+E+N+S)
-            #row_num += 1
-            #if column_num == 2:
-                #column_num = 1
-            #else:
-                #column_num += 1
-            #i += 1
+        for num in Emergency(13.61).returnMedicineList():
+            num = f"{num:.2f}"
+            l = Label(self, text = num, bg = "white", relief = "solid", bd = 1)
+            if row_num % 2 == 0:
+                l.grid(row = row_num, column = column_num, sticky = W+E+N+S)
+            else:
+                l.grid(row = row_num - 1, column = column_num, sticky = W+E+N+S)
+            row_num += 1
+            i += 1
+            if column_num == 5:
+                column_num = 4
+            else:
+                column_num += 1
+            
 
             
 
