@@ -50,13 +50,10 @@ class Emergency:
                             self.atropine5Max, self.dexamenthasoneSPMin, self.dexamenthasoneSPMax, 
                             self.diphenhydramineMin, self.diphenhydramineMax, self.ephedrineMin, 
                             self.ephedrineMax, self.glycopyrrolateMin, self.glycopyrrolateMax]
-    
 
     def returnMedicineList(self):
         return self.medicineList
-   
-j = Emergency(13.61).returnMedicineList()
-print(j)
+
     
 
 
