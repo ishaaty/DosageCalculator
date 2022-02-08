@@ -15,6 +15,10 @@ class Application(Frame):
         self.create_widgets_emergency()
         self.create_widgets_ALS()
         self.create_widgets_anesthesia
+        self.kgs = 0
+        self.ownerName = 0
+        self.petname = 0
+        self.species = 0
     
 
     def create_widgets_generalInfo(self):
@@ -84,7 +88,7 @@ class Application(Frame):
         column_num = 4
 
         i = 0
-        for num in Emergency(13.61).returnMedicineList():
+        for num in Emergency(self.kgs).returnMedicineList():
             num = f"{num:.2f}"
             l = Label(self, text = num, bg = "white", relief = "solid", bd = 1)
             if row_num % 2 == 0:
