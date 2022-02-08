@@ -112,15 +112,6 @@ class Application(Frame):
 
 
 
-def main():
-    root = Tk()
-    root.title("Dosage Table")
-    root.geometry("720x500")
-    app = Application(root)
-
-    root.mainloop()
-
-main()
 
 
 
