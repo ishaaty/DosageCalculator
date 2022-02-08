@@ -7,18 +7,24 @@ from dosageEntry import PatientInfoEntry
 
 class Application(Frame):
 
-    def __init__(self, master):
+    def __init__(self, master, patient, owner, species, weight):
 
         super().__init__(master)
         self.grid()
+
+        self.kgs = weight
+        self.ownerName = owner
+        self.petName = patient
+        self.species = species
+
         self.create_widgets_generalInfo()
         self.create_widgets_emergency()
         self.create_widgets_ALS()
         self.create_widgets_anesthesia
-        self.kgs = 0
-        self.ownerName = 0
-        self.petname = 0
-        self.species = 0
+        self.kgs = weight
+        self.ownerName = owner
+        self.petName = patient
+        self.species = species
     
 
     def create_widgets_generalInfo(self):
@@ -28,19 +34,19 @@ class Application(Frame):
 
 
         # patient Name
-        patientName = Label(self, text = "Patient Name: " + "name")
+        patientName = Label(self, text = "Patient Name: " + self.petName)
         patientName.grid(row = 1, column = 0, columnspan = 2, sticky = W, padx = 20)
 
         # owner Name
-        ownerName = Label(self, text = "Owner Name: " + "name")
+        ownerName = Label(self, text = "Owner Name: " + self.ownerName)
         ownerName.grid(row = 2, column = 0, columnspan = 2, sticky = W, padx = 20, pady = (0,10))
 
         # species
-        species = Label(self, text = "Species: " + "species")
+        species = Label(self, text = "Species: " + self.species)
         species.grid(column = 2, row = 1, columnspan = 2, sticky = W)
 
         # body weight kgs
-        kgs = Label(self, text = "Body Weight(kgs): " + "kgs")
+        kgs = Label(self, text = "Body Weight(kgs): " + self.kgs)
         kgs.grid(column = 2, row = 2, columnspan = 2, sticky = W)
 
 
@@ -88,7 +94,7 @@ class Application(Frame):
         column_num = 4
 
         i = 0
-        for num in Emergency(self.kgs).returnMedicineList():
+        for num in Emergency(float(self.kgs)).returnMedicineList():
             num = f"{num:.2f}"
             l = Label(self, text = num, bg = "white", relief = "solid", bd = 1)
             if row_num % 2 == 0:

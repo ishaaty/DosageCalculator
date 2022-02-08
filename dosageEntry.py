@@ -25,7 +25,7 @@ class PatientInfoEntry(Frame):
         self.species = StringVar()
         self.species.set(None)
         for animal in speciesList:
-            Radiobutton(self, text = animal, variable = self.species, value = row_value).grid(row = row_value, column = 3)
+            Radiobutton(self, text = animal, variable = self.species, value = animal).grid(row = row_value, column = 3)
             row_value += 1
         
         Label(self, text = "Injectable Perianesthetic Medications for canine/feline")
@@ -40,4 +40,4 @@ class PatientInfoEntry(Frame):
         Button(self, text = "Submit", bg = "#56b2e8", command = self.on_button_press).grid(row = 4, column = 3)
 
     def on_button_press(self):
-        self.callback_on_selected(self.patient_ent.get(), self.owner_ent.get(), self.species, self.weight_ent.get())
+        self.callback_on_selected(self.patient_ent.get(), self.owner_ent.get(), self.species.get(), self.weight_ent.get())

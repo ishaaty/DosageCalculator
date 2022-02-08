@@ -26,7 +26,7 @@ class DosageManager():
 
     def displayDosageTable(self):
         self.root.title("Dosages")
-        self.screen = Application(master = self.root)
+        self.screen = Application(master = self.root, patient = self.patient, owner = self.owner, species = self.species, weight = self.weight)
 
 def main():
     calc = DosageManager()
