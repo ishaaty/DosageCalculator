@@ -9,7 +9,7 @@ class PatientInfoEntry(Frame):
         self.callback_on_selected = callback_on_selected
 
     def create_widgets(self):
-        Label(self, text = "DOSAGE CALCULATOR", font = "Impact 24", fg = "#56b2e8").grid(row = 0, column = 0, columnspan = 2)
+        Label(self, text = "DOSAGE CALCULATOR", font = "Impact 24", fg = "#56b2e8").grid(row = 0, column = 0, columnspan = 2, padx = (20, 0))
 
         Label(self, text = "Patient Name:").grid(row = 1, column = 0, sticky = E)
         self.patient_ent = Entry(self)
