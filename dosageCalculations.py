@@ -46,13 +46,13 @@ class Emergency:
         self.glycopyrrolateMin = self.kgs * 0.005 / 0.2
         self.glycopyrrolateMax = self.kgs * 0.01 / 0.2
 
-        self.medicineList = [self.atropine4Min, self.atropine4Max, self.atropine5Min, 
+        self.emergencyList = [self.atropine4Min, self.atropine4Max, self.atropine5Min, 
                             self.atropine5Max, self.dexamenthasoneSPMin, self.dexamenthasoneSPMax, 
                             self.diphenhydramineMin, self.diphenhydramineMax, self.ephedrineMin, 
                             self.ephedrineMax, self.glycopyrrolateMin, self.glycopyrrolateMax]
 
     def returnMedicineList(self):
-        return self.medicineList
+        return self.emergencyList
 
     
 
@@ -72,7 +72,8 @@ class anesthesiaAnalgesia:
         self.alfaxaloneMax = self.kgs * 4 / 10
         self.alfaxaloneMin = self.kgs / 10
 
-        self.atipamezole = self.kgs * 0.05 / 5
+        self.atipamezoleMin = self.kgs * 0.05 / 5
+        self.atipamezoleMax = False
 
         self.atipamezoleFMax = self.kgs * 0.021 / 5
         self.atipamezoleFMin = self.kgs * 0.012 / 5
@@ -89,7 +90,8 @@ class anesthesiaAnalgesia:
         self.buprenorophineFMax = self.kgs * 0.02 / 0.3
         self.buprenorophineFMin = self.kgs * 0.01 / 0.3
 
-        self.buprenorphineLA = self.kgs * 0.24 / 1.8
+        self.buprenorphineLAMin = self.kgs * 0.24 / 1.8
+        self.buprenorphineLAMax = False
 
         self.butorphanelMax = self.kgs * 0.4 / 10
         self.butorphanelMin = self.kgs * 0.2 / 10
@@ -123,9 +125,11 @@ class anesthesiaAnalgesia:
 
         self.maropitantCitrate = self.kgs / 10
 
-        self.meloxicamC = self.kgs * 0.2 / 5
+        self.meloxicamCMin = self.kgs * 0.2 / 5
+        self.meloxicamCMax = False
 
-        self.meloxicamF = self.kgs * 0.3 / 5
+        self.meloxicamFMin = self.kgs * 0.3 / 5
+        self.meloxicamFMax = False
 
         self.midazolam1Max = self.kgs * 0.3
         self.midazolam1Min = self.kgs * 0.1
@@ -136,10 +140,38 @@ class anesthesiaAnalgesia:
         self.propofolMax = self.kgs * 8 / 10
         self.propofolMin = self.kgs / 10
 
-        self.robenacoxib = self.kgs * 2 / 20
+        self.robenacoxibMin = self.kgs * 2 / 20
+        self.robenacoxibMax = False
 
         self.tiletaminZolazepamMax = self.kgs * 4 / 100
         self.tiletaminZolazepamMin = self.kgs / 100
+
+        self.anesthesiaList = [self.acepromazineCMin, self.acepromazineCMax,
+                            self.acepromazineFMin, self.acepromazineFMax, self.alfaxaloneMin, 
+                            self.alfaxaloneMax, self.atipamezoleMin, self.atipamezoleMax, self.atipamezoleFMin,
+                            self.atipamezoleFMax, self.bupivacaineCMin, self.bupivacaineCMax, 
+                            self.bupivacaineFMin, self.bupivacaineFMax, 
+                            self.buprenorophineCMin, self.buprenorophineCMax, self.buprenorophineFMin,
+                            self.buprenorophineFMax, self.buprenorphineLAMin, self.buprenorphineLAMax, self.butorphanelMin,
+                            self.butorphanelMax, self.carprofenMin, self.carprofenMax, 
+                            self.dexmedetomidineCMin, self.dexmedetomidineCMax, 
+                            self.dexmedetomidineFMin, self.dexmedetomidineFMax, self.DKTmixtureMin, 
+                            self.DKTmixtureMax, self.fentanylMin, self.fentanylMax, 
+                            self.hydromorphoneCMin, self.hydromorphoneCMax, self.hydromorphoneFMin, 
+                            self.hydromorphoneCMax, self.ketamineMin, self.ketamineMax,
+                            self.lidocaineMin, self.lidocaineMax, self.maropitantCitrate, 
+                            self.meloxicamCMin, self.meloxicamCMax, self.meloxicamFMin, self.meloxicamFMax, self.midazolam1Min,
+                            self.midazolam1Max, self.midazolam5Min, self.midazolam5Max, 
+                            self.propofolMin, self.propofolMax, self.robenacoxibMin, self.robenacoxibMax, 
+                            self.tiletaminZolazepamMin, self.tiletaminZolazepamMax]
+
+    def returnMedicine(self):
+        return self.anesthesiaList
+
+        
+
+
+
 
 
 
@@ -153,21 +185,36 @@ class AdvancedLifeSupport:
         self.atipamezoleMax = self.kgs * 0.1 / 5
 
         self.flumazenilMin = self.kgs * 0.01 / 0.1
+        self.flumazenilMax = False
 
-        self.naxolone = self.kgs * 0.04 / 0.4
+        self.naxoloneMin = self.kgs * 0.04 / 0.4
+        self.naxoloneMax = False
 
-        self.atropine4 = self.kgs * 0.05 / 0.4
+        self.atropine4Min = self.kgs * 0.05 / 0.4
+        self.atropineMax = False
 
-        self.atropine5 = self.kgs * 0.05 / 0.54
+        self.atropine5Min = self.kgs * 0.05 / 0.54
+        self.atropine5Max = False
 
         self.epinephrineMin = self.kgs * 0.01
         self.epinephrineMax = self.kgs * 0.1
 
-        self.amiodarone = self.kgs * 5 / 50
+        self.amiodaroneMin = self.kgs * 5 / 50
+        self.amiodaroneMax = False
 
         self.lidocaineCMin = self.kgs * 2 / 20
         self.lidocaineCMax = self.kgs * 4 / 20
 
-        self.lidocaineF = self.kgs * 0.2 / 20
+        self.lidocaineFMin = self.kgs * 0.2 / 20
+        self.lidocaineFMax = False
+
+        self.ALSList = [self.atipamezoleMin, self.atipamezoleMax, self.flumazenilMin, 
+                        self.flumazenilMax, self.naxoloneMin, self.naxoloneMax, self.atropine4Min, 
+                        self.atropineMax, self.atropine5Min, self.atropine5Max, self.epinephrineMin, 
+                        self.epinephrineMax, self.amiodaroneMin, self.amiodaroneMax, self.lidocaineCMin, 
+                        self.lidocaineCMax, self.lidocaineFMin,self.lidocaineFMax]
+
+    def returnList(self):
+        return self.ALSList
 
      
