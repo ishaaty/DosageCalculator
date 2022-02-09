@@ -19,7 +19,7 @@ class Application(Frame):
 
         self.create_widgets_generalInfo()
         self.create_widgets_emergency()
-        self.create_widgets_anesthesia
+        self.create_widgets_anesthesia()
         self.kgs = weight
         self.ownerName = owner
         self.petName = patient
@@ -28,7 +28,7 @@ class Application(Frame):
 
     def create_widgets_generalInfo(self):
         # TODO
-        Label(self, text = "DOSAGE CALCULATOR: Felines & Canines", font = "Impact 24", fg = "#56b2e8").grid(row = 0, column = 0, columnspan = 5, sticky = W, padx = 20, pady =(10, 5))
+        Label(self, text = "DOSAGE CALCULATOR: Felines & Canines", font = "Impact 24", fg = "#56b2e8").grid(row = 0, column = 0, columnspan = 4, sticky = W, padx = 20, pady =(10, 5))
 
 
 
@@ -52,7 +52,7 @@ class Application(Frame):
 
     def create_widgets_emergency(self):
 
-        Label(self, text = "Emergency", bg = "#56b2e8", font = "Impact 12", fg = "white", relief = "solid", bd = 1).grid(row = 3, column = 0, columnspan = 6, sticky = W+E, padx = (20,0))
+        Label(self, text = "Emergency Medications", bg = "#56b2e8", font = "Impact 12", fg = "white", relief = "solid", bd = 1).grid(row = 3, column = 0, columnspan = 6, sticky = W+E, padx = (20,0))
 
         Label(self, text = "Drug", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 0, sticky = W+E+N+S, padx = (20,0))
 
@@ -90,7 +90,7 @@ class Application(Frame):
         row_num = 6
         column_num = 4
 
-        i = 0
+    
         for num in Emergency(float(self.kgs)).returnMedicineList():
             num = f"{num:.2f}"
             l = Label(self, text = num, bg = "white", relief = "solid", bd = 1)
@@ -99,7 +99,6 @@ class Application(Frame):
             else:
                 l.grid(row = row_num - 1, column = column_num, sticky = W+E+N+S)
             row_num += 1
-            i += 1
             if column_num == 5:
                 column_num = 4
             else:
@@ -115,9 +114,9 @@ class Application(Frame):
 
     def create_widgets_anesthesia(self):
 
-        Label(self, text = "Anesthesia and Analegesia", bg = "white", relief = "solid", bd = 1).grid(row = 3, column = 6, columnspan = 6, sticky = W+E, padx = (5,0))
+        Label(self, text = "Anesthesia and Analegesia Medications", bg = "#56b2e8", font = "Impact 12", fg = "white", relief = "solid", bd = 1).grid(row = 3, column = 6, columnspan = 6, sticky = W+E, padx = (10,0))
 
-        Label(self, text = "Drug", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 6, sticky = W+E+N+S, padx = (5,0))
+        Label(self, text = "Drug", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 6, sticky = W+E+N+S, padx = (10,0))
 
         Label(self, text = "Conc. mg/mL", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 7, sticky = W+E+N+S)
 
@@ -125,12 +124,23 @@ class Application(Frame):
 
         Label(self, text = "Species", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, rowspan = 2, column = 9, sticky = W+E+N+S)
     
-        Label(self, text = "Volume (mLs)", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, column = 110, columnspan = 2, sticky = W+E+N+S)
+        Label(self, text = "Volume (mLs)", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 4, column = 10, columnspan = 2, sticky = W+E+N+S)
 
         Label(self, text = "Minimum", bg = "white", relief = "solid", bd = 1).grid(row = 5, column = 10, sticky = W+E+N+S)
 
         Label(self, text = "Maximum", bg = "white", relief = "solid", bd = 1).grid(row = 5, column = 11, sticky = W+E+N+S)
 
+
+
+def main():
+    root = Tk()
+    root.title("Dosage Table") 
+    root.geometry("500x500")
+    app = Application(root)
+
+    root.mainloop()
+
+#main()
 
 
 
