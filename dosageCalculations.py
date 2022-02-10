@@ -81,7 +81,7 @@ class anesthesiaAnalgesia:
         self.bupivacaineCMax = self.kgs * 2 / 5
         self.bupivacaineCMin = self.kgs / 5
 
-        self.bupivacaineFMax = self.kgs * 1.5 /5
+        self.bupivacaineFMin = self.kgs * 1.5 /5
         self.bupivacaineFMax = self.kgs / 5
 
         self.buprenorophineCMax = self.kgs * 0.02 / 0.3
@@ -111,11 +111,11 @@ class anesthesiaAnalgesia:
         self.fentanylMax = self.kgs * 0.005 / 0.05
         self.fentanylMin = self.kgs * 0.003 / 0.05
 
-        self.hydromorphoneCMax = self.kgs * 0.2 / 2
-        self.hydromorphoneCMin = self.kgs * 0.05 / 2
+        self.hydromorphoneCMin = self.kgs * 0.2 / 2
+        self.hydromorphoneCMax = self.kgs * 0.05 / 2
 
+        self.hydromorphoneFMin = self.kgs * 0.05 / 2 
         self.hydromorphoneFMax = self.kgs * 0.1 / 2
-        self.hydromorphoneCMin = self.kgs * 0.05 / 2 
         
         self.ketamineMax = self.kgs * 2 / 100
         self.ketamineMin = self.kgs / 100
@@ -158,7 +158,7 @@ class anesthesiaAnalgesia:
                             self.dexmedetomidineFMin, self.dexmedetomidineFMax, self.DKTmixtureMin, 
                             self.DKTmixtureMax, self.fentanylMin, self.fentanylMax, 
                             self.hydromorphoneCMin, self.hydromorphoneCMax, self.hydromorphoneFMin, 
-                            self.hydromorphoneCMax, self.ketamineMin, self.ketamineMax,
+                            self.hydromorphoneFMax, self.ketamineMin, self.ketamineMax,
                             self.lidocaineMin, self.lidocaineMax, self.maropitantCitrate, 
                             self.meloxicamCMin, self.meloxicamCMax, self.meloxicamFMin, self.meloxicamFMax, self.midazolam1Min,
                             self.midazolam1Max, self.midazolam5Min, self.midazolam5Max, 
