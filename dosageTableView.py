@@ -7,7 +7,7 @@ from dosageEntry import PatientInfoEntry
 
 class Application(Frame):
 
-    def __init__(self, master, patient, owner, species, weight):
+    def __init__(self, master, patient, owner, species, weight, callback_on_close, callback_on_entry):
 
         super().__init__(master)
         self.grid()
@@ -16,8 +16,11 @@ class Application(Frame):
         self.ownerName = owner
         self.petName = patient
         self.species = species
+        self.callback_on_close = callback_on_close
+        self.callback_on_entry = callback_on_entry
 
         self.create_widgets_generalInfo()
+        self.create_widgets_buttons()
         self.create_widgets_emergency()
         self.create_widgets_ALS()
         self.create_widgets_anesthesia()
@@ -184,7 +187,15 @@ class Application(Frame):
 
         Label(self, text = "Maximum", bg = "white", relief = "solid", bd = 1).grid(row = 5, column = 11, sticky = W+E+N+S)
 
+    def create_widgets_buttons(self):
+        Button(self, text = "Close Form", bg = "#56b2e8", fg = "white", font = "Impact 8", command = self.form_closed).grid(row = 0, column = 7)
+        Button(self, text = "Enter Patient Info", bg = "#56b2e8", fg = "white", font = "Impact 8", command = self.enter_patient_info).grid(row = 1, column = 7)
 
+    def form_closed(self):
+        self.callback_on_close()
+    
+    def enter_patient_info(self):
+        self.callback_on_entry()
 
 def main():
     root = Tk()
