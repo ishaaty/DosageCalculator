@@ -109,7 +109,7 @@ class Application(Frame):
             
 
     def create_widgets_ALS(self):
-        Label(self, text = "Advanced Life Support (ALS)", bg = "#56b2e8", font = "Impact 12", fg = "white", relief = "solid", bd = 1).grid(row = 17, column = 0, columnspan = 6, sticky = W+E, padx = (20,0), pady = (10,0))
+        Label(self, text = "Advanced Life Support (ALS) Medications", bg = "#56b2e8", font = "Impact 12", fg = "white", relief = "solid", bd = 1).grid(row = 17, column = 0, columnspan = 6, sticky = W+E, padx = (20,0), pady = (10,0))
 
         Label(self, text = "Drug", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 18, rowspan = 2, column = 0, sticky = W+E+N+S, padx = (20,0))
 
