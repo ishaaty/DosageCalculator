@@ -34,19 +34,19 @@ class Application(Frame):
 
 
         # patient Name
-        patientName = Label(self, text = "Patient Name: " + self.petName)
+        patientName = Label(self, text = "Patient Name: " + self.petName, font = "Arial 10 bold")
         patientName.grid(row = 1, column = 0, columnspan = 2, sticky = W, padx = 20)
 
         # owner Name
-        ownerName = Label(self, text = "Owner Name: " + self.ownerName)
+        ownerName = Label(self, text = "Owner Name: " + self.ownerName, font = "Arial 10 bold")
         ownerName.grid(row = 2, column = 0, columnspan = 2, sticky = W, padx = 20, pady = (0,10))
 
         # species
-        species = Label(self, text = "Species: " + self.species)
+        species = Label(self, text = "Species: " + self.species, font = "Arial 10 bold")
         species.grid(column = 2, row = 1, columnspan = 2, sticky = W)
 
         # body weight kgs
-        kgs = Label(self, text = "Body Weight(kgs): " + self.kgs)
+        kgs = Label(self, text = "Body Weight(kgs): " + self.kgs, font = "Arial 10 bold")
         kgs.grid(column = 2, row = 2, columnspan = 2, sticky = W)
 
 
@@ -148,9 +148,12 @@ class Application(Frame):
         column_num = 4
 
         i = 0
-        for num in Emergency(float(self.kgs)).returnMedicineList():
-            num = f"{num:.2f}"
-            l = Label(self, text = num, bg = "white", relief = "solid", bd = 1)
+        for num in AdvancedLifeSupport(float(self.kgs)).returnList():
+            if num == 0:
+                l = Label(self, text = "", bg = "#56b2e8", relief = "solid", bd = 1)
+            else:
+                num = f"{num:.2f}"
+                l = Label(self, text = num, bg = "white", relief = "solid", bd = 1)
             if row_num % 2 == 0:
                 l.grid(row = row_num, column = column_num, sticky = W+E+N+S)
             else:
