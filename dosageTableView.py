@@ -10,6 +10,7 @@ class Application(Frame):
     def __init__(self, master, patient, owner, species, weight, callback_on_close, callback_on_entry):
 
         super().__init__(master)
+
         self.grid()
 
         self.kgs = weight
@@ -24,16 +25,11 @@ class Application(Frame):
         self.create_widgets_emergency()
         self.create_widgets_ALS()
         self.create_widgets_anesthesia()
-        self.kgs = weight
-        self.ownerName = owner
-        self.petName = patient
-        self.species = species
     
 
     def create_widgets_generalInfo(self):
-        # TODO
+        
         Label(self, text = "DOSAGE CALCULATOR: Felines & Canines", font = "Impact 24", fg = "#56b2e8").grid(row = 0, column = 0, columnspan = 4, sticky = W, padx = 20, pady =(10, 5))
-
 
 
         # patient Name
@@ -128,8 +124,6 @@ class Application(Frame):
 
         Label(self, text = "Maximum", bg = "white", relief = "solid", bd = 1).grid(row = 19, column = 5, sticky = W+E+N+S)
 
-
-        # fix this code v
         f = open("namesALS.txt")
         row_num = 20
         column_num = 0
@@ -162,7 +156,6 @@ class Application(Frame):
             else:
                 l.grid(row = row_num - 1, column = column_num, sticky = W+E+N+S)
             row_num += 1
-            i += 1
             if column_num == 5:
                 column_num = 4
             else:

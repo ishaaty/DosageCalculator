@@ -8,8 +8,8 @@ Bupivacaine; 5; 1 - 1.5; feline
 Buprenorphine; 0.3; 0.005 - 0.02; canine
 Burprenorophine; 0.3; 0.01 - 0.02; feline
 Burenophine LA; 1.8; 0.24; canine/feline
-
-
+Butorphanel; 10; 0.2 - 0.4; canine/feline
+Carprofen; 50; 4 - 4.4; canine/feline
 Dexmedetomidine; 0.5; 0.002 - 0.005; canine
 Dexmedetomidine; 0.5; 0.005 - 0.01; feline
 DKT mixture; 1; 0.035 - 0.065; feline
