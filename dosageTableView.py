@@ -147,7 +147,6 @@ class Application(Frame):
         row_num = 20
         column_num = 4
 
-        i = 0
         for num in Emergency(float(self.kgs)).returnMedicineList():
             num = f"{num:.2f}"
             l = Label(self, text = num, bg = "white", relief = "solid", bd = 1)
@@ -156,7 +155,6 @@ class Application(Frame):
             else:
                 l.grid(row = row_num - 1, column = column_num, sticky = W+E+N+S)
             row_num += 1
-            i += 1
             if column_num == 5:
                 column_num = 4
             else:
