@@ -52,6 +52,9 @@ class Emergency:
                             self.ephedrineMax, self.glycopyrrolateMin, self.glycopyrrolateMax]
 
     def returnMedicineList(self):
+        for num in self.emergencyList:
+            num = float(num)
+            num = f"{num:.2f}"
         return self.emergencyList
 
     
@@ -105,8 +108,8 @@ class anesthesiaAnalgesia:
         self.dexmedetomidineFMax = self.kgs * 0.01 / 0.5
         self.dexmedetomidineFMin = self.kgs * 0.005 / 0.5
 
-        self.DKTmixtureMax = ""
-        self.DKTmixtureMin = ""
+        self.DKTmixtureMax = self.kgs * 0.065 
+        self.DKTmixtureMin = self.kgs * 0.035
 
         self.fentanylMax = self.kgs * 0.005 / 0.05
         self.fentanylMin = self.kgs * 0.003 / 0.05
@@ -166,6 +169,9 @@ class anesthesiaAnalgesia:
                             self.tiletaminZolazepamMin, self.tiletaminZolazepamMax]
 
     def returnMedicine(self):
+        for num in self.anesthesiaList:
+            num = float(num)
+            num = f"{num:.2f}"
         return self.anesthesiaList
 
         
