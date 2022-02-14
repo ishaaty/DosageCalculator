@@ -84,7 +84,7 @@ class Application(Frame):
                 if x == 20:
                     x = 0
                 column_num += 1
-            row_num += 2
+            row_num += 1
             column_num = 0
 
         row_num = 6
@@ -94,11 +94,11 @@ class Application(Frame):
         for num in Emergency(float(self.kgs)).returnMedicineList():
             num = f"{num:.2f}"
             l = Label(self, text = num, bg = "white", relief = "solid", bd = 1)
-            if row_num % 2 == 0:
+            if column_num % 2 == 0:
                 l.grid(row = row_num, column = column_num, sticky = W+E+N+S)
+                row_num += 1
             else:
                 l.grid(row = row_num - 1, column = column_num, sticky = W+E+N+S)
-            row_num += 1
             if column_num == 5:
                 column_num = 4
             else:
@@ -108,24 +108,24 @@ class Application(Frame):
             
 
     def create_widgets_ALS(self):
-        Label(self, text = "Advanced Life Support (ALS) Medications", bg = "#56b2e8", font = "Impact 12", fg = "white", relief = "solid", bd = 1).grid(row = 17, column = 0, columnspan = 6, sticky = W+E, padx = (20,0), pady = (10,0))
+        Label(self, text = "Advanced Life Support (ALS) Medications", bg = "#56b2e8", font = "Impact 12", fg = "white", relief = "solid", bd = 1).grid(row = 12, column = 0, columnspan = 6, sticky = W+E, padx = (20,0), pady = (10,0))
 
-        Label(self, text = "Drug", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 18, rowspan = 2, column = 0, sticky = W+E+N+S, padx = (20,0))
+        Label(self, text = "Drug", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 13, rowspan = 2, column = 0, sticky = W+E+N+S, padx = (20,0))
 
-        Label(self, text = "Conc. mg/mL", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 18, rowspan = 2, column = 1, sticky = W+E+N+S)
+        Label(self, text = "Conc. mg/mL", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 13, rowspan = 2, column = 1, sticky = W+E+N+S)
 
-        Label(self, text = "Range mg/kg", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 18, rowspan = 2, column = 2, sticky = W+E+N+S)
+        Label(self, text = "Range mg/kg", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 13, rowspan = 2, column = 2, sticky = W+E+N+S)
 
-        Label(self, text = "Species", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 18, rowspan = 2, column = 3, sticky = W+E+N+S)
+        Label(self, text = "Species", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 13, rowspan = 2, column = 3, sticky = W+E+N+S)
     
-        Label(self, text = "Volume (mLs)", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 18, column = 4, columnspan = 2, sticky = W+E+N+S)
+        Label(self, text = "Volume (mLs)", bg = "white", font = "Arial 9 bold", relief = "solid", bd = 1).grid(row = 13, column = 4, columnspan = 2, sticky = W+E+N+S)
 
-        Label(self, text = "Minimum", bg = "white", relief = "solid", bd = 1).grid(row = 19, column = 4, sticky = W+E+N+S)
+        Label(self, text = "Minimum", bg = "white", relief = "solid", bd = 1).grid(row = 14, column = 4, sticky = W+E+N+S)
 
-        Label(self, text = "Maximum", bg = "white", relief = "solid", bd = 1).grid(row = 19, column = 5, sticky = W+E+N+S)
+        Label(self, text = "Maximum", bg = "white", relief = "solid", bd = 1).grid(row = 14, column = 5, sticky = W+E+N+S)
 
         f = open("namesALS.txt")
-        row_num = 20
+        row_num = 15
         column_num = 0
         x = 20
 
@@ -138,10 +138,10 @@ class Application(Frame):
                 if x == 20:
                     x = 0
                 column_num += 1
-            row_num += 2
+            row_num += 1
             column_num = 0
 
-        row_num = 20
+        row_num = 15
         column_num = 4
 
         i = 0
@@ -151,11 +151,11 @@ class Application(Frame):
             else:
                 num = f"{num:.2f}"
                 l = Label(self, text = num, bg = "white", relief = "solid", bd = 1)
-            if row_num % 2 == 0:
+            if column_num % 2 == 0:
                 l.grid(row = row_num, column = column_num, sticky = W+E+N+S)
+                row_num += 1
             else:
                 l.grid(row = row_num - 1, column = column_num, sticky = W+E+N+S)
-            row_num += 1
             if column_num == 5:
                 column_num = 4
             else:
@@ -193,7 +193,7 @@ class Application(Frame):
                 if x == 20:
                     x = 0
                 column_num += 1
-            row_num += 2
+            row_num += 1
             column_num = 6
 
         row_num = 6
@@ -206,11 +206,11 @@ class Application(Frame):
             else:
                 num = f"{num:.2f}"
                 l = Label(self, text = num, bg = "white", relief = "solid", bd = 1)
-            if row_num % 2 == 0:
+            if column_num % 2 == 0:
                 l.grid(row = row_num, column = column_num, sticky = W+E+N+S)
+                row_num += 1
             else:
                 l.grid(row = row_num - 1, column = column_num, sticky = W+E+N+S)
-            row_num += 1
             if column_num == 11:
                 column_num = 10
             else:
