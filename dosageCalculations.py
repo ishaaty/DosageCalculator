@@ -78,14 +78,14 @@ class anesthesiaAnalgesia:
         self.atipamezoleMin = self.kgs * 0.05 / 5
         self.atipamezoleMax = False
 
-        self.atipamezoleFMax = self.kgs * 0.021 / 5
-        self.atipamezoleFMin = self.kgs * 0.012 / 5
+        self.atipamezoleFMax = self.kgs * 0.012 / 5
+        self.atipamezoleFMin = self.kgs * 0.021 / 5
 
         self.bupivacaineCMax = self.kgs * 2 / 5
         self.bupivacaineCMin = self.kgs / 5
 
-        self.bupivacaineFMin = self.kgs * 1.5 /5
-        self.bupivacaineFMax = self.kgs / 5
+        self.bupivacaineFMin = self.kgs / 5
+        self.bupivacaineFMax = self.kgs * 1.5 / 5
 
         self.buprenorophineCMax = self.kgs * 0.02 / 0.3
         self.buprenorophineCMin = self.kgs * 0.005 / 0.3
@@ -114,8 +114,8 @@ class anesthesiaAnalgesia:
         self.fentanylMax = self.kgs * 0.005 / 0.05
         self.fentanylMin = self.kgs * 0.003 / 0.05
 
-        self.hydromorphoneCMin = self.kgs * 0.2 / 2
-        self.hydromorphoneCMax = self.kgs * 0.05 / 2
+        self.hydromorphoneCMin = self.kgs * 0.05 / 2
+        self.hydromorphoneCMax = self.kgs * 0.2 / 2
 
         self.hydromorphoneFMin = self.kgs * 0.05 / 2 
         self.hydromorphoneFMax = self.kgs * 0.1 / 2
