@@ -11,8 +11,6 @@ class Application(Frame):
 
         super().__init__(master)
 
-        master = Frame()
-
         self.grid()
 
         self.kgs = weight
@@ -28,11 +26,11 @@ class Application(Frame):
         self.create_widgets_emergency()
         self.create_widgets_ALS()
         self.create_widgets_anesthesia()
+    
 
-
-    def create_widgets_generalInfo(self, master):
+    def create_widgets_generalInfo(self):
         
-        self.gen_info = Frame(master, bg = "#56b2e8", width = 12)
+        self.gen_info = Frame(bg = "#56b2e8", width = 12)
         self.gen_info.grid(row = 0, column = 0, sticky = EW)
 
         Label(self.gen_info, text = "DOSAGE CALCULATOR: Felines & Canines", font = "Impact 24", fg = "white", bg= "#56b2e8").grid(row = 0, column = 0, columnspan = 4, sticky = W, padx = 20, pady =(10, 5))
@@ -253,7 +251,15 @@ class Application(Frame):
     def enter_patient_info(self):
         self.callback_on_entry()
 
+def main():
+    root = Tk()
+    root.title("Dosage Table") 
+    root.geometry("500x500")
+    app = Application(root)
 
+    root.mainloop()
+
+#main()
 
 
 
