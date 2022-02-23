@@ -23,7 +23,7 @@ class Application(Frame):
         self.create_widgets_generalInfo(master)
         self.create_widgets_buttons()        
         self.create_widgets_scrollbar(master)        
-        self.create_widgets_emergency(master)
+        self.create_widgets_emergency()
         self.create_widgets_ALS()
         self.create_widgets_anesthesia()
     
