@@ -28,7 +28,7 @@ class Application(Frame):
         self.create_widgets_anesthesia()
     
 
-    def create_widgets_generalInfo(self):
+    def create_widgets_generalInfo(self, master):
         
         self.gen_info = Frame(bg = "#56b2e8", width = 12)
         self.gen_info.grid(row = 0, column = 0, sticky = EW)
