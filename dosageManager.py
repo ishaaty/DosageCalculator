@@ -2,7 +2,6 @@ from tkinter import *
 
 from dosageEntry import PatientInfoEntry
 from dosageTableView import Application
-from dosageCalculations import Patient, Emergency, anesthesiaAnalgesia, AdvancedLifeSupport
 
 class DosageManager():
     def __init__(self):
