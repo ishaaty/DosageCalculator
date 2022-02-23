@@ -23,12 +23,12 @@ class Application(Frame):
         self.create_widgets_generalInfo(master)
         self.create_widgets_buttons()        
         self.create_widgets_scrollbar(master)        
-        self.create_widgets_emergency()
+        self.create_widgets_emergency(master)
         self.create_widgets_ALS()
         self.create_widgets_anesthesia()
     
 
-    def create_widgets_generalInfo(self):
+    def create_widgets_generalInfo(self, master):
         
         self.gen_info = Frame(bg = "#56b2e8", width = 12)
         self.gen_info.grid(row = 0, column = 0, sticky = EW)
