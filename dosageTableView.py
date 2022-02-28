@@ -12,6 +12,8 @@ class Application(Frame):
         super().__init__(master)
 
         self.grid()
+        self.grid_rowconfigure(0, weight = 1)
+        self.columnconfigure(0, weight = 1)
 
         self.kgs = weight
         self.ownerName = owner
@@ -58,6 +60,7 @@ class Application(Frame):
         self.table_frame.grid_columnconfigure(0, weight = 1)
 
         self.canvas = Canvas(self.table_frame)
+        self.canvas.configure(scrollregion = self.canvas.bbox("all"))
         self.canvas.grid(row = 3, column = 0, sticky = "NEWS")
 
 
@@ -236,9 +239,15 @@ class Application(Frame):
         self.canvas.configure(height = 650, width = 1000)
 
         self.inner_frame = Frame(self.canvas)
+        self.inner_frame.grid_rowconfigure(0, weight = 1)
+        self.inner_frame.grid_columnconfigure(0, weight = 1)
+        self.inner_frame.propagate(False)
         self.canvas.create_window((0,0), window = self.inner_frame, anchor = NW)
 
         self.inner_frame.update_idletasks()
+        self.inner_frame.bind("<Configure>", self.onFrameConfigure)
+
+    def onFrameConfigure(self, event):
         self.canvas.config(scrollregion = self.canvas.bbox("all"))
     
     def create_widgets_buttons(self):
@@ -246,9 +255,15 @@ class Application(Frame):
         Button(self.gen_info, text = "Enter Patient Info", bg = "white", font = "Arial 8 bold", command = self.enter_patient_info).grid(row = 1, column = 7)
 
     def form_closed(self):
+        self.gen_info.destroy()
+        self.table_frame.destroy()
+        self.canvas.destroy()
         self.callback_on_close()
     
     def enter_patient_info(self):
+        self.gen_info.destroy()
+        self.table_frame.destroy()
+        self.canvas.destroy()
         self.callback_on_entry()
 
 def main():
