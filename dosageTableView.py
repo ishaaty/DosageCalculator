@@ -64,6 +64,7 @@ class Application(Frame):
         self.canvas.grid(row = 3, column = 0, sticky = "NEWS")
 
 
+
     def create_widgets_emergency(self):
 
         Label(self.inner_frame, text = "Emergency Medications", bg = "#56b2e8", font = "Impact 12", fg = "white", relief = "solid", bd = 1).grid(row = 3, column = 0, columnspan = 6, sticky = W+E, padx = (20,0), pady = (10, 0))
