@@ -20,7 +20,7 @@ label3.grid(row=3, column=0, pady=5, sticky='nw')
 frame_canvas = tk.Frame(frame_main)
 frame_canvas.grid(row=2, column=0, pady=(5, 0), sticky='nw')
 frame_canvas.grid_rowconfigure(0, weight=1)
-frame_canvas.grid_columnconfigure(0, weight=1)
+#frame_canvas.grid_columnconfigure(0, weight=1)
 # Set grid_propagate to False to allow 5-by-5 buttons resizing later
 frame_canvas.grid_propagate(False)
 
