@@ -237,7 +237,7 @@ class Application(Frame):
         self.scrollbar = Scrollbar(self.table_frame, orient = VERTICAL, command = self.canvas.yview)
         self.scrollbar.grid(row = 3, column = 1, sticky = NS)
         self.canvas.configure(yscrollcommand = self.scrollbar.set)
-        self.canvas.configure(height = 650, width = 1000)
+        self.canvas.configure(height = 500, width = 1000)
 
         self.inner_frame = Frame(self.canvas)
         self.inner_frame.grid_rowconfigure(0, weight = 1)
