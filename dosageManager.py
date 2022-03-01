@@ -13,7 +13,7 @@ class DosageManager():
 
     def displayPatientIntroEntry(self):
         self.root.title("Patient Information")
-        self.root.geometry("500x210")
+        self.root.geometry("490x175")
         self.screen = PatientInfoEntry(master = self.root, callback_on_selected = self.onclose_PatientIntroEntry)
         
 
