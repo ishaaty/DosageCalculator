@@ -107,7 +107,7 @@ class Application(Frame):
         column_num = 4
 
     
-        for num in Emergency(float(self.kgs)).returnMedicineList():
+        for num in Emergency(float(self.kgs), self.species).returnMedicineList():
             num = f"{num:.2f}"
             l = Label(self.inner_frame, text = num, bg = "white", relief = "solid", bd = 1)
             if column_num % 2 == 0:
@@ -161,7 +161,7 @@ class Application(Frame):
         column_num = 4
 
         i = 0
-        for num in AdvancedLifeSupport(float(self.kgs)).returnList():
+        for num in AdvancedLifeSupport(float(self.kgs), self.species).returnList():
             if num == 0:
                 l = Label(self.inner_frame, text = "", bg = "#56b2e8", relief = "solid", bd = 1)
             else:
@@ -216,7 +216,7 @@ class Application(Frame):
         column_num = 10
 
 
-        for num in anesthesiaAnalgesia(float(self.kgs)).returnMedicine():
+        for num in anesthesiaAnalgesia(float(self.kgs), self.species).returnMedicine():
             if num == 0:
                 l = Label(self.inner_frame, text = "", bg = "#56b2e8", relief = "solid", bd = 1)
             else:
