@@ -24,7 +24,7 @@ class Patient:
 
 class Emergency:
 
-    def __init__(self, kgs):
+    def __init__(self, kgs, species):
 
         self.kgs = kgs
 
@@ -62,15 +62,23 @@ class Emergency:
 
 class anesthesiaAnalgesia:
 
-    def __init__(self, kgs):
+    def __init__(self, kgs, species):
 
         self.kgs = kgs
 
-        self.acepromazineCMax = self.kgs * 0.05
-        self.acepromazineCMin = self.kgs * 0.005
+        if species == "Canine":
+            self.acepromazineCMax = self.kgs * 0.05
+            self.acepromazineCMin = self.kgs * 0.005
+        else:
+            self.acepromazineCMax = 0
+            self.acepromazineCMin = 0
 
-        self.acepromazineFMax = self.kgs * 0.1
-        self.acepromazineFMin = self.kgs * 0.01
+        if species == "Feline":
+            self.acepromazineFMax = self.kgs * 0.1
+            self.acepromazineFMin = self.kgs * 0.01
+        else:
+            self.acepromazineFMax = 0
+            self.acepromazineFMin = 0
 
         self.alfaxaloneMax = self.kgs * 4 / 10
         self.alfaxaloneMin = self.kgs / 10
@@ -78,20 +86,41 @@ class anesthesiaAnalgesia:
         self.atipamezoleMin = self.kgs * 0.05 / 5
         self.atipamezoleMax = False
 
-        self.atipamezoleFMax = self.kgs * 0.012 / 5
-        self.atipamezoleFMin = self.kgs * 0.021 / 5
+        if species == "Feline":
+            self.atipamezoleFMax = self.kgs * 0.012 / 5
+            self.atipamezoleFMin = self.kgs * 0.021 / 5
+        else:
+            self.atipamezoleFMax = 0
+            self.atipamezoleFMin = 0
 
-        self.bupivacaineCMax = self.kgs * 2 / 5
-        self.bupivacaineCMin = self.kgs / 5
+        if species == "Canine":
+            self.bupivacaineCMax = self.kgs * 2 / 5
+            self.bupivacaineCMin = self.kgs / 5
+        else:
+            self.bupivacaineCMax = 0
+            self.bupivacaineCMin = 0
+        
+        if species == "Feline":
+            self.bupivacaineFMin = self.kgs / 5
+            self.bupivacaineFMax = self.kgs * 1.5 / 5
 
-        self.bupivacaineFMin = self.kgs / 5
-        self.bupivacaineFMax = self.kgs * 1.5 / 5
+        else:
+            self.bupivacaineFMin = 0
+            self.bupivacaineFMax = 0
 
-        self.buprenorophineCMax = self.kgs * 0.02 / 0.3
-        self.buprenorophineCMin = self.kgs * 0.005 / 0.3
+        if species == "Canine":
+            self.buprenorophineCMax = self.kgs * 0.02 / 0.3
+            self.buprenorophineCMin = self.kgs * 0.005 / 0.3
+        else:
+            self.buprenorophineCMax = 0
+            self.buprenorophineCMin = 0
 
-        self.buprenorophineFMax = self.kgs * 0.02 / 0.3
-        self.buprenorophineFMin = self.kgs * 0.01 / 0.3
+        if species == "Feline":
+            self.buprenorophineFMax = self.kgs * 0.02 / 0.3
+            self.buprenorophineFMin = self.kgs * 0.01 / 0.3
+        else:
+            self.buprenorophineFMax = 0 
+            self.buprenorophineFMin = 0
 
         self.buprenorphineLAMin = self.kgs * 0.24 / 1.8
         self.buprenorphineLAMax = False
@@ -102,37 +131,70 @@ class anesthesiaAnalgesia:
         self.carprofenMax = self.kgs * 4.4 / 50
         self.carprofenMin = self.kgs * 4 / 50
 
-        self.dexmedetomidineCMax = self.kgs * 0.005 / 0.5
-        self.dexmedetomidineCMin = self.kgs * 0.02 / 0.5
+        if species == "Canine":
+            self.dexmedetomidineCMax = self.kgs * 0.005 / 0.5
+            self.dexmedetomidineCMin = self.kgs * 0.02 / 0.5
+        else:
+            self.dexmedetomidineCMax = 0
+            self.dexmedetomidineCMin = 0
+        
+        if species == "Feline":
+            self.dexmedetomidineFMax = self.kgs * 0.01 / 0.5
+            self.dexmedetomidineFMin = self.kgs * 0.005 / 0.5
 
-        self.dexmedetomidineFMax = self.kgs * 0.01 / 0.5
-        self.dexmedetomidineFMin = self.kgs * 0.005 / 0.5
+        else:
+            self.dexmedetomidineFMax = 0
+            self.dexmedetomidineFMin = 0
 
-        self.DKTmixtureMax = self.kgs * 0.065 
-        self.DKTmixtureMin = self.kgs * 0.035
+        if species == "Feline":
+            self.DKTmixtureMax = self.kgs * 0.065 
+            self.DKTmixtureMin = self.kgs * 0.035
+        else:
+            self.DKTmixtureMax = 0 
+            self.DKTmixtureMin = 0
 
         self.fentanylMax = self.kgs * 0.005 / 0.05
         self.fentanylMin = self.kgs * 0.003 / 0.05
 
-        self.hydromorphoneCMin = self.kgs * 0.05 / 2
-        self.hydromorphoneCMax = self.kgs * 0.2 / 2
+        if species == "Canine":
+            self.hydromorphoneCMin = self.kgs * 0.05 / 2
+            self.hydromorphoneCMax = self.kgs * 0.2 / 2
+        else:
+            self.hydromorphoneCMin = 0
+            self.hydromorphoneCMax = 0
 
-        self.hydromorphoneFMin = self.kgs * 0.05 / 2 
-        self.hydromorphoneFMax = self.kgs * 0.1 / 2
-        
-        self.ketamineMax = self.kgs * 2 / 100
-        self.ketamineMin = self.kgs / 100
+        if species == "Feline":
+            self.hydromorphoneFMin = self.kgs * 0.05 / 2 
+            self.hydromorphoneFMax = self.kgs * 0.1 / 2
+        else:
+            self.hydromorphoneFMin = 0 
+            self.hydromorphoneFMax = 0
+
+        if species == "Canine":
+            self.ketamineMax = self.kgs * 2 / 100
+            self.ketamineMin = self.kgs / 100
+        else:
+            self.ketamineMax = 0
+            self.ketamineMin = 0
 
         self.lidocaineMax = self.kgs * 4 / 20
         self.lidocaineMin = self.kgs / 20
 
         self.maropitantCitrate = self.kgs / 10
 
-        self.meloxicamCMin = self.kgs * 0.2 / 5
-        self.meloxicamCMax = False
+        if species == "Canine":
+            self.meloxicamCMin = self.kgs * 0.2 / 5
+            self.meloxicamCMax = False
+        else:
+            self.meloxicamCMin = 0
+            self.meloxicamCMax = 0
 
-        self.meloxicamFMin = self.kgs * 0.3 / 5
-        self.meloxicamFMax = False
+        if species == "Feline":
+            self.meloxicamFMin = self.kgs * 0.3 / 5
+            self.meloxicamFMax = False
+        else:
+            self.meloxicamFMin = 0
+            self.meloxicamFMax = 0
 
         self.midazolam1Max = self.kgs * 0.3
         self.midazolam1Min = self.kgs * 0.1
@@ -183,7 +245,7 @@ class anesthesiaAnalgesia:
 
 class AdvancedLifeSupport:
 
-    def __init__(self,kgs):
+    def __init__(self,kgs, species):
 
         self.kgs = kgs
 
@@ -207,12 +269,19 @@ class AdvancedLifeSupport:
 
         self.amiodaroneMin = self.kgs * 5 / 50
         self.amiodaroneMax = False
-
-        self.lidocaineCMin = self.kgs * 2 / 20
-        self.lidocaineCMax = self.kgs * 4 / 20
-
-        self.lidocaineFMin = self.kgs * 0.2 / 20
-        self.lidocaineFMax = False
+        
+        if species == "Canine":
+            self.lidocaineCMin = self.kgs * 2 / 20
+            self.lidocaineCMax = self.kgs * 4 / 20
+        else:
+            self.lidocaineCMin = 0
+            self.lidocaineCMax = 0
+        if species == "Feline":
+            self.lidocaineFMin = self.kgs * 0.2 / 20
+            self.lidocaineFMax = False
+        else:
+            self.lidocaineFMin = 0
+            self.lidocaineFMax = 0
 
         self.ALSList = [self.atipamezoleMin, self.atipamezoleMax, self.flumazenilMin, 
                         self.flumazenilMax, self.naxoloneMin, self.naxoloneMax, self.atropine4Min, 
