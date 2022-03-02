@@ -18,11 +18,12 @@ class DosageManager():
         
 
     
-    def onclose_PatientIntroEntry(self, patient, owner, species, weight):
+    def onclose_PatientIntroEntry(self, patient, owner, species, weight, weightType):
         self.patient = patient
         self.owner = owner
         self.species = species
         self.weight = weight
+        self.weightType = weightType
 
         self.screen.destroy()
 
@@ -32,12 +33,10 @@ class DosageManager():
 
         self.root.title("Dosages")
         self.root.geometry("1095x700")
-        self.screen = Application(master = self.root, patient = self.patient, owner = self.owner, species = self.species, weight = self.weight, callback_on_close = self.close_GUI, callback_on_entry = self.new_entry)
+        self.screen = Application(master = self.root, patient = self.patient, owner = self.owner, species = self.species, weight = self.weight, weightType = self.weightType, callback_on_close = self.close_GUI, callback_on_entry = self.new_entry)
         self.root.config()
         
         
-
-
     def close_GUI(self):
         self.root.destroy()
 

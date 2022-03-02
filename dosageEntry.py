@@ -32,11 +32,11 @@ class PatientInfoEntry(Frame):
         Label(self, text = "Select Weight Unit", fg = "#56b2e8", font = "Arial 10 underline").grid(row = 0, column = 4, sticky = S)
         weightList = ["kgs", "lbs"]
         row_value = 1
-        self.weight = StringVar()
-        self.weight.set(None)
+        self.weightType = StringVar()
+        self.weightType.set(None)
 
         for i in weightList:
-            Radiobutton(self, text = i, variable = self.weight, value = i).grid(row = row_value, column = 4)
+            Radiobutton(self, text = i, variable = self.weightType, value = i).grid(row = row_value, column = 4)
             row_value += 1
 
         Label(self, text = "Injectable Perianesthetic Medications for canine/feline")
@@ -52,8 +52,7 @@ class PatientInfoEntry(Frame):
 
 
     def on_button_press(self):
-        
-        self.callback_on_selected(self.patient_ent.get(), self.owner_ent.get(), self.species.get(), self.weight_ent.get())
+        self.callback_on_selected(self.patient_ent.get(), self.owner_ent.get(), self.species.get(), self.weight_ent.get(), self.weightType.get())
 
 
 
