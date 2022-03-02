@@ -53,7 +53,6 @@ class Application(Frame):
 
         Label(self.gen_info, text = "DOSAGE CALCULATOR: Felines & Canines", font = "Impact 24", fg = "white", bg= "#56b2e8").grid(row = 0, column = 0, columnspan = 4, sticky = W, padx = 20, pady =(10, 5))
 
-
         # patient Name
         patientName = Label(self.gen_info, text = "Patient Name: " + self.petName, font = "Arial 10 bold")
         patientName.grid(row = 1, column = 0, columnspan = 2, sticky = W, padx = 20)
@@ -64,10 +63,14 @@ class Application(Frame):
 
         # species
         species = Label(self.gen_info, text = "Species: " + self.species, font = "Arial 10 bold")
-        species.grid(column = 2, row = 1, columnspan = 2, sticky = W)
+        species.grid(column = 3, row = 1, sticky = E)
 
         # body weight kgs
         kgs = Label(self.gen_info, text = "Body Weight(kgs): " + self.kgs, font = "Arial 10 bold")
+        kgs.grid(column = 2, row = 1, columnspan = 2, sticky = W)
+
+        # body weight lbs
+        kgs = Label(self.gen_info, text = "Body Weight(lbs): " + self.lbs, font = "Arial 10 bold")
         kgs.grid(column = 2, row = 2, columnspan = 2, sticky = W)
 
         self.table_frame = Frame(master)
@@ -268,8 +271,8 @@ class Application(Frame):
         self.canvas.config(scrollregion = self.canvas.bbox("all"))
     
     def create_widgets_buttons(self):
-        Button(self.gen_info, text = "Close Form", bg = "white", font = "Arial 8 bold", command = self.form_closed).grid(row = 0, column = 7)
-        Button(self.gen_info, text = "Enter Patient Info", bg = "white", font = "Arial 8 bold", command = self.enter_patient_info).grid(row = 1, column = 7)
+        Button(self.gen_info, text = "Close Form", bg = "white", font = "Arial 8 bold", command = self.form_closed).grid(row = 0, column = 10)
+        Button(self.gen_info, text = "Enter Patient Info", bg = "white", font = "Arial 8 bold", command = self.enter_patient_info).grid(row = 0, column = 7)
 
     def form_closed(self):
         self.gen_info.destroy()
