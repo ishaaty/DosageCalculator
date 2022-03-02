@@ -176,40 +176,51 @@ class anesthesiaAnalgesia:
         else:
             self.ketamineMax = 0
             self.ketamineMin = 0
-
-        self.lidocaineMax = self.kgs * 4 / 20
-        self.lidocaineMin = self.kgs / 20
-
-        self.maropitantCitrate = self.kgs / 10
+        ##################
+        if species == "Canine":
+            self.lidocaineMaxCA = self.kgs * 4 / 20
+            self.lidocaineMinCA = self.kgs / 20
+            self.lidocaineMinFA = 0
+            self.lidocaineMaxFA = 0
+        
+        if species == "Feline":
+            self.lidocaineMinFA = self.kgs / 20
+            self.lidocaineMaxFA = self.kgs * 2 / 20
+            self.lidocaineMinCA = 0
+            self.lidocaineMaxCA = 0
+        #################
+        self.maropitantCitrateMin = self.kgs / 10
+        self.maropitantCitrateMax = 0
 
         if species == "Canine":
             self.meloxicamCMin = self.kgs * 0.2 / 5
-            self.meloxicamCMax = False
+            self.meloxicamCMax = 0
         else:
             self.meloxicamCMin = 0
             self.meloxicamCMax = 0
 
         if species == "Feline":
             self.meloxicamFMin = self.kgs * 0.3 / 5
-            self.meloxicamFMax = False
+            self.meloxicamFMax = 0
         else:
             self.meloxicamFMin = 0
             self.meloxicamFMax = 0
 
-        self.midazolam1Max = self.kgs * 0.3
         self.midazolam1Min = self.kgs * 0.1
+        self.midazolam1Max = self.kgs * 0.3
 
-        self.midazolam5Max = self.kgs * 0.3 / 5
         self.midazolam5Min = self.kgs * 0.1 / 5
-
-        self.propofolMax = self.kgs * 8 / 10
+        self.midazolam5Max = self.kgs * 0.3 / 5
+        
         self.propofolMin = self.kgs / 10
+        self.propofolMax = self.kgs * 8 / 10
 
         self.robenacoxibMin = self.kgs * 2 / 20
-        self.robenacoxibMax = False
+        self.robenacoxibMax = 0
 
-        self.tiletaminZolazepamMax = self.kgs * 4 / 100
         self.tiletaminZolazepamMin = self.kgs / 100
+        self.tiletaminZolazepamMax = self.kgs * 4 / 100
+        
 
         self.anesthesiaList = [self.acepromazineCMin, self.acepromazineCMax,
                             self.acepromazineFMin, self.acepromazineFMax, self.alfaxaloneMin, 
@@ -224,7 +235,7 @@ class anesthesiaAnalgesia:
                             self.DKTmixtureMax, self.fentanylMin, self.fentanylMax, 
                             self.hydromorphoneCMin, self.hydromorphoneCMax, self.hydromorphoneFMin, 
                             self.hydromorphoneFMax, self.ketamineMin, self.ketamineMax,
-                            self.lidocaineMin, self.lidocaineMax, self.maropitantCitrate, 
+                            self.lidocaineMinCA, self.lidocaineMaxCA, self.lidocaineMinFA, self.lidocaineMaxFA,self.maropitantCitrateMin, self.maropitantCitrateMax, 
                             self.meloxicamCMin, self.meloxicamCMax, self.meloxicamFMin, self.meloxicamFMax, self.midazolam1Min,
                             self.midazolam1Max, self.midazolam5Min, self.midazolam5Max, 
                             self.propofolMin, self.propofolMax, self.robenacoxibMin, self.robenacoxibMax, 
