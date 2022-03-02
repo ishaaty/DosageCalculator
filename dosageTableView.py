@@ -7,7 +7,7 @@ from dosageEntry import PatientInfoEntry
 
 class Application(Frame):
 
-    def __init__(self, master, patient, owner, species, weight, callback_on_close, callback_on_entry):
+    def __init__(self, master, patient, owner, species, weight, weightType, callback_on_close, callback_on_entry):
 
         super().__init__(master)
 
@@ -15,13 +15,17 @@ class Application(Frame):
         self.grid_rowconfigure(0, weight = 1)
         self.columnconfigure(0, weight = 1)
 
-        self.kgs = weight
+        self.weightType = weightType
+        self.weight = weight
         self.ownerName = owner
         self.petName = patient
         self.species = species
+        self.lbs = 0
+        self.kgs = 0
         self.callback_on_close = callback_on_close
         self.callback_on_entry = callback_on_entry
 
+        self.calculateWeight()
         self.create_widgets_generalInfo(master)
         self.create_widgets_buttons()        
         self.create_widgets_scrollbar(master)        
@@ -29,6 +33,18 @@ class Application(Frame):
         self.create_widgets_ALS()
         self.create_widgets_anesthesia()
     
+    def calculateWeight(self):
+        if self.weightType == "lbs":
+            self.lbs = float(self.weight)
+            self.lbs = f"{self.lbs:.2f}"
+            self.kgs = float(self.weight) / 2.205
+            self.kgs = f"{self.kgs:.2f}"
+        else:
+            self.lbs = float(self.weight) * 2.205
+            self.lbs = f"{self.lbs:.2f}"
+            self.kgs = float(self.weight)
+            self.kgs = f"{self.kgs:.2f}"
+
 
     def create_widgets_generalInfo(self, master):
         
