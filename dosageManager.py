@@ -31,7 +31,7 @@ class DosageManager():
     def displayDosageTable(self):
 
         self.root.title("Dosages")
-        self.root.geometry("1200x900")
+        self.root.geometry("1095x700")
         self.screen = Application(master = self.root, patient = self.patient, owner = self.owner, species = self.species, weight = self.weight, callback_on_close = self.close_GUI, callback_on_entry = self.new_entry)
         self.root.config()
         
