@@ -122,14 +122,21 @@ class anesthesiaAnalgesia:
             self.buprenorophineFMax = 0 
             self.buprenorophineFMin = 0
 
-        self.buprenorphineLAMin = self.kgs * 0.24 / 1.8
-        self.buprenorphineLAMax = False
+        if species == "Feline":
+            self.buprenorphineLAMin = self.kgs * 0.24 / 1.8
+        else:
+            self.buprenorphineLAMin = 0
+        self.buprenorphineLAMax = 0
 
         self.butorphanelMax = self.kgs * 0.4 / 10
         self.butorphanelMin = self.kgs * 0.2 / 10
 
-        self.carprofenMax = self.kgs * 4.4 / 50
-        self.carprofenMin = self.kgs * 4 / 50
+        if species == "Canine":
+            self.carprofenMax = self.kgs * 4.4 / 50
+            self.carprofenMin = self.kgs * 4 / 50
+        else:
+            self.carprofenMax = 0
+            self.carprofenMin = 0
 
         if species == "Canine":
             self.dexmedetomidineCMax = self.kgs * 0.005 / 0.5
