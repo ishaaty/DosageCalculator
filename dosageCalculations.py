@@ -67,28 +67,28 @@ class anesthesiaAnalgesia:
         self.kgs = kgs
 
         if species == "Canine":
-            self.acepromazineCMax = self.kgs * 0.05
             self.acepromazineCMin = self.kgs * 0.005
+            self.acepromazineCMax = self.kgs * 0.05
         else:
-            self.acepromazineCMax = 0
             self.acepromazineCMin = 0
+            self.acepromazineCMax = 0
 
         if species == "Feline":
-            self.acepromazineFMax = self.kgs * 0.1
             self.acepromazineFMin = self.kgs * 0.01
+            self.acepromazineFMax = self.kgs * 0.1
         else:
-            self.acepromazineFMax = 0
             self.acepromazineFMin = 0
+            self.acepromazineFMax = 0
 
-        self.alfaxaloneMax = self.kgs * 4 / 10
         self.alfaxaloneMin = self.kgs / 10
+        self.alfaxaloneMax = self.kgs * 4 / 10
 
         self.atipamezoleMin = self.kgs * 0.05 / 5
-        self.atipamezoleMax = False
+        self.atipamezoleMax = 0
 
         if species == "Feline":
-            self.atipamezoleFMin = self.kgs * 0.021 / 5
-            self.atipamezoleFMax = self.kgs * 0.012 / 5
+            self.atipamezoleFMin = self.kgs * 0.012 / 5
+            self.atipamezoleFMax = self.kgs * 0.021 / 5
         else:
             self.atipamezoleFMin = 0
             self.atipamezoleFMax = 0
@@ -132,36 +132,36 @@ class anesthesiaAnalgesia:
         self.butorphanelMin = self.kgs * 0.2 / 10
 
         if species == "Canine":
-            self.carprofenMax = self.kgs * 4.4 / 50
             self.carprofenMin = self.kgs * 4 / 50
+            self.carprofenMax = self.kgs * 4.4 / 50
         else:
-            self.carprofenMax = 0
             self.carprofenMin = 0
+            self.carprofenMax = 0
 
         if species == "Canine":
-            self.dexmedetomidineCMin = self.kgs * 0.02 / 0.5
-            self.dexmedetomidineCMax = self.kgs * 0.005 / 0.5
+            self.dexmedetomidineCMin = self.kgs * 0.005 / 0.5
+            self.dexmedetomidineCMax = self.kgs * 0.02 / 0.5
         else:
             self.dexmedetomidineCMin = 0
             self.dexmedetomidineCMax = 0
             
         if species == "Feline":
-            self.dexmedetomidineFMax = self.kgs * 0.01 / 0.5
             self.dexmedetomidineFMin = self.kgs * 0.005 / 0.5
+            self.dexmedetomidineFMax = self.kgs * 0.01 / 0.5
 
         else:
-            self.dexmedetomidineFMax = 0
             self.dexmedetomidineFMin = 0
+            self.dexmedetomidineFMax = 0
 
         if species == "Feline":
-            self.DKTmixtureMax = self.kgs * 0.065 
             self.DKTmixtureMin = self.kgs * 0.035
+            self.DKTmixtureMax = self.kgs * 0.065 
         else:
-            self.DKTmixtureMax = 0 
             self.DKTmixtureMin = 0
+            self.DKTmixtureMax = 0 
 
-        self.fentanylMax = self.kgs * 0.005 / 0.05
         self.fentanylMin = self.kgs * 0.003 / 0.05
+        self.fentanylMax = self.kgs * 0.005 / 0.05
 
         if species == "Canine":
             self.hydromorphoneCMin = self.kgs * 0.05 / 2
