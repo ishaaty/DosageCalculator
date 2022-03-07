@@ -87,11 +87,11 @@ class anesthesiaAnalgesia:
         self.atipamezoleMax = False
 
         if species == "Feline":
-            self.atipamezoleFMax = self.kgs * 0.012 / 5
             self.atipamezoleFMin = self.kgs * 0.021 / 5
+            self.atipamezoleFMax = self.kgs * 0.012 / 5
         else:
-            self.atipamezoleFMax = 0
             self.atipamezoleFMin = 0
+            self.atipamezoleFMax = 0
 
         if species == "Canine":
             self.bupivacaineCMax = self.kgs * 2 / 5
