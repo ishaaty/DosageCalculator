@@ -139,8 +139,8 @@ class anesthesiaAnalgesia:
             self.carprofenMax = 0
 
         if species == "Canine":
-            self.dexmedetomidineCMin = self.kgs * 0.005 / 0.5
             self.dexmedetomidineCMax = self.kgs * 0.02 / 0.5
+            self.dexmedetomidineCMin = self.kgs * 0.005 / 0.5
         else:
             self.dexmedetomidineCMin = 0
             self.dexmedetomidineCMax = 0
